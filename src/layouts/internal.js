@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import clsx from 'clsx';
 import { Switch, Redirect, useHistory } from 'react-router-dom';
@@ -17,7 +18,7 @@ import {
   IconButton,
 } from '@material-ui/core';
 import {  ExpandLess, ExpandMore, ExitToApp, Menu} from '@material-ui/icons';
-import { Button } from 'components';
+import { Button, Dropdown, Select } from 'components';
 import routes from 'routes';
 
 const drawerWidth = 300;
@@ -32,6 +33,12 @@ const useStyles = makeStyles((theme) => ({
       width: drawerWidth,
       flexShrink: 0,
     },
+  },
+  customTitle: {
+    padding: theme.spacing(2),
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
+    borderRadius: 0
   },
   appBar: {
     width: `calc(100%)`,
@@ -173,7 +180,7 @@ export default function Auth() {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar style={{ minHeight: 56 }}>
-          <IconButton
+          {/* <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={() => setDrawer(true)}
@@ -181,10 +188,17 @@ export default function Auth() {
             className={clsx(classes.menuButton, drawer && classes.hide)}
           >
            <Menu/>
-          </IconButton>
-          <Typography variant="h6" noWrap>
+          </IconButton> */}
+          <Typography className={classes.customTitle} variant="h6" noWrap>
             {getActiveRoute().name}
           </Typography>
+          <Dropdown 
+            label="Build Your Model"
+            options={[
+                {label: "SIR", function: () => {}},
+                {label: "Custom", function: () => {}},
+            ]}
+          />
         </Toolbar>
       </AppBar>
       <Drawer

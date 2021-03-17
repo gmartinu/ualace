@@ -1,9 +1,9 @@
-import React from 'react';
-
-// import { Container } from './styles';
-
 function Home() {
-  return <div />;
+  return (
+    <>
+      <h1>Teste</h1>
+    </>
+  );
 }
 
 export default Home;

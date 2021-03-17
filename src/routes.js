@@ -24,7 +24,7 @@ const Routes = [
   },
   {
     path: '/',
-    name: 'Início',
+    name: 'PESTILENS',
     component: Home_Page,
     layout: '/internal',
   },
